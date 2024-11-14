@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="starBankApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/hipoteca.css">
+    <link rel="stylesheet" type="text/css" href="styles/nav.css">
+    <title>StarBank Web | Pago Servicios</title>
+</head>
+<body ng-controller="pagoServicioController"> <!-- Cambio aquí para usar el controlador correcto -->
+    <div class="top">
+        <h1>STARBANK | SERVICIOS</h1>
+        <form action="">
+            <input type="search" placeholder="¿Tienes alguna pregunta?">
+        </form>
+    </div>
+    <nav class="navbar">
+        <a href="micuenta.html">MI CUENTA</a>
+        <a href="midebito.html">MI DÉBITO</a>
+        <a href="servicios.html">PAGO DE SERVICIOS</a>
+    </nav>
+    <div class="return">
+        <a href="javascript:history.back()">
+            <img src="Images/return.png" alt="Botón de retroceso" width="100">
+        </a>
+    </div>
+    <div class="target2">
+        <h1>Pagar</h1>
+        <h1 class="values">Mensualidad: {{ datosServicios.mensualidad | currency }}</h1>
+        <form ng-submit="realizarPago('mensualidad')"> <!-- Combinar los formularios para incluir la cantidad a pagar en uno solo -->
+            <input type="text" ng-model="datosPago.cantidad" placeholder="Cantidad a pagar">
+            <button class="button">Pagar mensualidad</button>
+        </form>
+    </div>
+    <script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="starBankApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/movimientos.css">
+    <link rel="stylesheet" type="text/css" href="styles/nav.css">
+    <script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+    <script src="app.js" defer></script>
+    <title>StarBank Web | Movimientos</title>
+</head>
+
+<body ng-controller="MovementsController">
+    <div class="top">
+        <h1>STARBANK | MOVIMIENTOS</h1>
+    </div>
+
+    <nav class="navbar">
+        <a href="micuenta.html">MI CUENTA</a>
+        <a href="midebito.html">MI DÉBITO</a>
+        <a href="servicios.html">PAGO DE SERVICIOS</a>
+    </nav>
+
+    <div class="return">
+        <a href="javascript:history.back()">
+            <img src="Images/return.png" alt="Botón de retroceso" width="100">
+        </a>
+    </div>
+
+    <section class="section80">
+        <div class="target">
+            <h2>Movimientos</h2>
+            
+            <div class="botones">
+                <button ng-click="sortBy('fecha')">Ordenar por Fecha</button>
+                <button ng-click="sortBy('monto')">Ordenar por Monto</button>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Tipo</th>
+                        <th>Monto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12/10/ 2024 </td>
+                        <td> deposito a mi cuenta</td>
+                        <td> $300.00 </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+
+</html>

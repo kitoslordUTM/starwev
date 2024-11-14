@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="starBankApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/cambiarnip.css">
+    <link rel="stylesheet" type="text/css" href="styles/navcambiarnip.css">
+    <title>StarBank Web</title>
+</head>
+<body ng-controller="cambiarNIPController">
+    <div class="top">     
+        <h1>STARBANK | CAMBIAR NIP</h1>
+        <form action="" method="post">
+            <input type="search" placeholder="¿Tienes alguna pregunta?">
+        </form>
+    </div>
+
+    <div class="return">
+        <a href="javascript:history.back()">
+            <img src="Images/return.png" alt="Botón de retroceso" width="100" id="Retro" >
+        </a>
+    </div>
+    
+    <div class="target">
+        <form novalidate ng-submit="cambiarNIP()">
+            <h1>Cambiar NIP</h1>
+            <input type="text" placeholder="Número de cuenta" required ng-model="datosNIP.numeroTarjeta">
+            <input type="password" placeholder="NIP actual" required ng-model="datosNIP.NIPAnterior">
+            <input type="password" placeholder="NIP Nuevo" required ng-model="datosNIP.NIPNuevo">
+            <button type="submit" class="button">Cambiar NIP</button>
+        </form>
+    </div>
+
+    <script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

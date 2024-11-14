@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.target{
+    padding: 25px;
+    position: absolute;
+    background-color: #d9d9d9;
+    width: 500px;
+    height: 250px;
+    top: 8em;
+    border-radius: 15px;
+    left: 500px;
+}
+
+.target h1{
+    color: #343434;
+    text-align: center;
+    margin-bottom: 1.5em;
+    font-size: 30px;
+}
+
+
+.target input {
+    font-weight: 400;
+    width: 450px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.target .button {
+    width: 470px;
+    padding: 10px;
+    background-color: #BF4AF7;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.target form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.target #listaEnlaces a{
+    text-decoration: none;
+    color: #BF4AF7;
+    margin-right: 10px;
+    padding-left: 15px;
+}
+
+
+/* */
+
+.target2{
+    padding: 25px;
+    position: relative;
+    background-color: #d9d9d9;
+    width: 500px;
+    height: 300px;
+    border-radius: 15px;
+    left: 500px;
+    top: 320px;
+}
+
+.target2 h1{
+    color: #343434;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+
+
+.target2 input {
+    font-weight: 400;
+    width: 450px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.target2 .button {
+    width: 470px;
+    padding: 10px;
+    background-color: #BF4AF7;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.target2 form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.target2 #listaEnlaces a{
+    text-decoration: none;
+    color: #BF4AF7;
+    margin-right: 10px;
+    padding-left: 15px;
+}
+
+
+.target2 label{
+    color: #343434;
+}

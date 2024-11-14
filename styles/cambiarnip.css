@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.target{
+    display: flex;
+    position: absolute;
+    top: 3.2em;
+    width: 100%;
+    height: 32em;
+    align-items: center;
+    justify-content: center;
+}
+
+.target form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    height: 600px;
+    background-color: #E9E8E8;
+    border-radius: 15px;
+
+  }
+
+  .target h1{
+    margin: 40px 0px 20px 0px;
+    font-size: 35px;
+  }
+  
+  .target input {
+    position: relative;
+    top: 11px;
+    width: 70%;
+    height: 25px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  
+.target span{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 50px;
+  background-color: #d9d9d9;
+  padding: 15px;
+  color: #343434;
+margin-top: 10px;
+border-radius: 5px;
+font-size: 25px;
+font-weight: 600;
+}
+
+  .target .button {
+    width: 75%;
+    padding: 12px 0 12px 0;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #BF4AF7;
+    color: #f6f6f6;
+    border-radius: 5px;
+    margin: 15px 0px 50px 0px;
+    border: none;
+    cursor: pointer ;
+  }
+  
+  .target a{
+    text-decoration: none;
+  }
+
+  

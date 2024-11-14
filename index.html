@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="starBankApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <script src="angular.min.js"></script>  <!-- Ruta a la librería de AngularJS -->
+    <script src="angular-route.min.js"></script>  <!-- Ruta al módulo ngRoute de AngularJS -->
+    <script src="app.js"></script>  <!-- Ruta al archivo JavaScript de AngularJS -->
+    <title>StarBank Web</title>
+</head>
+
+<body ng-controller="loginController">
+
+    <div class="navbar">
+        <header>
+            <div id="LogoMain">
+                <h1>StarBank</h1>
+            </div>
+        </header>
+    </div>
+
+    <div class="main-login">
+        <div class="bienvenida-container">
+            <h1>Bienvenido a <br>StarBank App,<br> su cajero estrella.</h1>
+            <a href="acerca.html" class="more-info">Conoce más...</a>
+        </div>
+
+        <div class="login-container">
+            <h1>Ingresa con tu cuenta</h1>
+            <a href="serviciosnocuenta.html" class="red">Entrar sin cuenta</a>
+
+            <!-- Formulario actualizado para usar AngularJS ng-submit -->
+            <form ng-submit="iniciarSesion()">
+                <input type="email" ng-model="correo" placeholder="@email" required>
+                <input type="password" ng-model="password" placeholder="Contraseña" required>
+                <button type="submit" class="button">Iniciar sesión</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
+

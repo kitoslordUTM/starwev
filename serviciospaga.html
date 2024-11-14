@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="starBankApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/credito.css">
+    <link rel="stylesheet" type="text/css" href="styles/nav.css">
+    <title>StarBank Web | Servicios </title>
+</head>
+<body ng-controller="seriviciosController">
+    <div class="top">
+        <h1>STARBANK | SERVICIOS</h1>
+        <form action="">
+            <input type="search" placeholder="¿Tienes alguna pregunta?">
+        </form>
+    </div>
+    
+    <nav class="navbar">
+        <a href="micuenta.html">MI CUENTA</a>
+        <a href="midebito.html">MI DÉBITO</a>
+        <a href="servicios.html">PAGO DE SERVICIOS</a>
+    </nav>
+    <div class="return">
+        <a href="javascript:history.back()">
+            <img src="Images/return.png" alt="Botón de retroceso" width="100">
+        </a>
+    </div>
+    <div class="contenedor">
+        <div class="target2">
+            <h1>Ingresa tus datos</h1>
+            <form ng-submit="obtenerDatosServicios()">
+                <input type="text" ng-model="datosServicios.numeroCuenta" placeholder="Número de cuenta" required>
+                <button type="submit" class="button">Ingresar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

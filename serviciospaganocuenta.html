@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="starBankApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/serviciospaga.css">
+    <link rel="stylesheet" type="text/css" href="styles/nav.css">
+    <title>StarBank Web</title>
+    <script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="numCuentaController"> 
+    <div class="top">
+        <h1>STARBANK | TRANSACCIONES</h1>
+        <form action="">
+            <input type="search" placeholder="¿Tienes alguna pregunta?">
+        </form>
+    </div>
+
+    <div class="retuuurn">
+        <a href="javascript:history.back()">
+            <img src="Images/return.png" alt="Botón de retroceso" width="100">
+        </a>
+    </div>
+
+    <div class="target">
+        <h1>Ingresa tus datos</h1>
+        <form novalidate ng-submit="validarYGuardar()">
+            <input type="text" placeholder="Número de cuenta" ng-model="numeroCuenta" required>
+            <button type="submit" class="button">Ingresar</button>
+        </form>
+    </div>
+</body>
+</html>

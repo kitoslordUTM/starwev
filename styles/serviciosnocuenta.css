@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.target1{
+    width: 300px;
+    height: 450px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-image: url('resources/mainbg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 25px;
+    margin: 10px;
+    bottom: 5px;
+    left: 540px;
+}
+
+.target1 h1{
+    position: relative;
+    color: #f3f3f3;
+    font-size: 40px;
+    text-align: left;
+    bottom: 190px;
+    left: 25px;
+}
+
+.target1 .button{
+    position: relative;
+    top: 210px;
+    right: 0.6em;
+    background-color: #f3f3f3;
+    width: 100px;
+    color: #BF4AF7;
+    padding: 10px 20px 10px 20px;
+    border-radius: 45px;
+
+}
+
+.target1 a{
+    text-decoration: none;
+   
+}
+
+.target1 span{
+    position: relative;
+    color: #f3f3f3;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    bottom: 130px;
+    right: 50px;
+    width: 100%;
+}
+
+/**/
+
+.target2{
+    width: 300px;
+    height: 450px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-image: url('resources/mainbg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 25px;
+    margin: 10px;
+    bottom: 5px;
+    left: 170px;
+}
+
+.target2 h1{
+    position: relative;
+    color: #f3f3f3;
+    font-size: 40px;
+    text-align: left;
+    bottom: 190px;
+    left: 45px;
+}
+
+.target2 .button{
+    position: relative;
+    top: 210px;
+    right: 2em;
+    background-color: #f3f3f3;
+    width: 100px;
+    color: #BF4AF7;
+    padding: 10px 20px 10px 20px;
+    border-radius: 45px;
+
+}
+
+.target2 a{
+    text-decoration: none;
+   
+}
+
+.target2 span{
+    position: relative;
+    color: #f3f3f3;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    bottom: 130px;
+    right: 80px;
+    width: 100%;
+}
+
+/**/
+
+.target3{
+    width: 300px;
+    height: 450px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    background-image: url('resources/mainbg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 25px;
+    margin: 10px;
+    bottom: 5px;
+    right: 245px;
+}
+
+.target3 h1{
+    position: relative;
+    color: #f3f3f3;
+    font-size: 40px;
+    text-align: left;
+    bottom: 190px;
+    left: 65px;
+}
+
+.target3 .button{
+    position: relative;
+    top: 210px;
+    right: 50px;
+    background-color: #f3f3f3;
+    width: 100px;
+    color: #BF4AF7;
+    padding: 10px 20px 10px 20px;
+    border-radius: 45px;
+
+}
+
+.target3 a{
+    text-decoration: none;
+   
+}
+
+.target3 span{
+    position: relative;
+    color: #f3f3f3;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    bottom: 130px;
+    right: 80px;
+    width: 100%;
+}
+
+/**/
+
+.target4{
+    width: 300px;
+    height: 450px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    background-image: url('resources/mainbg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 25px;
+    margin: 10px;
+    top: 700px;
+    right: 375px;
+}
+
+.target4 h1{
+    position: relative;
+    color: #f3f3f3;
+    font-size: 40px;
+    text-align: left;
+    bottom: 190px;
+    left: 85px;
+}
+
+.target4 .button{
+    position: relative;
+    top: 210px;
+    right: 3.6em;
+    background-color: #f3f3f3;
+    width: 100px;
+    color: #BF4AF7;
+    padding: 10px 20px 10px 20px;
+    border-radius: 45px;
+
+}
+
+.target4 a{
+    text-decoration: none;
+   
+}
+
+.target4 span{
+    position: relative;
+    color: #f3f3f3;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    bottom: 130px;
+    right: 100px;
+    width: 100%;
+}
+
+/**/
+
+.target5{
+    width: 300px;
+    height: 450px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    background-image: url('resources/mainbg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 25px;
+    margin: 10px;
+    top: 700px;
+    right: 745px;
+}
+
+.target5 h1{
+    position: relative;
+    color: #f3f3f3;
+    font-size: 40px;
+    text-align: left;
+    bottom: 190px;
+    left: 25px;
+}
+
+.target5 .button{
+    position: relative;
+    top: 210px;
+    right: 0.5em;
+    background-color: #f3f3f3;
+    width: 100px;
+    color: #BF4AF7;
+    padding: 10px 20px 10px 20px;
+    border-radius: 45px;
+
+}
+
+.target5 a{
+    text-decoration: none;
+   
+}
+
+.target5 span{
+    position: relative;
+    color: #f3f3f3;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    bottom: 130px;
+    right: 30px;
+    width: 100%;
+}   

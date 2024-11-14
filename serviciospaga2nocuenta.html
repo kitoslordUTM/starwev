@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="starBankApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/credito.css">
+    <link rel="stylesheet" type="text/css" href="styles/nav.css">
+    <title>StarBank Web</title>
+    <script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="paymentController">
+
+    <div class="top">
+        <h1>STARBANK | CRÉDITO</h1>
+        <form action="">
+            <input type="search" placeholder="¿Tienes alguna pregunta?">
+        </form>
+    </div>
+
+    <div class="retuuurn">
+        <a href="javascript:history.back()">
+            <img src="Images/return.png" alt="Botón de retroceso" width="100">
+        </a>
+    </div>
+
+    <div class="contenedor">
+        <div class="target2">
+            <h1>Mensualidad requerida: {{cantidadAleatoria}}</h1>
+            <form ng-submit="realizarPago()">
+                <input type="number" placeholder="Cantidad a pagar" ng-model="cantidadIngresada" required>
+                <button type="submit" class="button">Realizar Pago</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

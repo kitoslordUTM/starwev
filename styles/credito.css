@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.contenedor{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 28em;
+  top: 5.6em;
+}
+
+.target2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30em;
+  background-color: #d9d9d9;
+  height: 22em;
+  border-radius: 15px;
+}
+
+.target2 form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 2em;
+}
+
+.target2 .button {
+  position: relative;
+  width: 78.2%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #BF4AF7;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  top: 2.5em;
+}
+
+.target2 .button:hover {
+  background-color: #D486F9;
+  scale: 1.05;
+  transition: 0.3s;
+}
+
+.target2 a {
+  color: #BF4AF7;
+  text-decoration: none;
+}
+
+.target2 h1 {
+  color: #343434;
+  font-size: 25px;
+  position: relative;
+  top: 2em;
+}
+
+.target2 input {
+  position: relative;
+  font-weight: 400;
+  width: 75%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  top: 45px;
+}

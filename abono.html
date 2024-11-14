@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="starBankApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/creditoopciones.css">
+    <link rel="stylesheet" type="text/css" href="styles/nav.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <title> StarBank Web</title>
+</head>
+<body ng-controller="DepositController">
+
+    <div class="top">
+        <h1>STARBANK | CRÉDITO</h1>
+        <form action="">
+            <input type="search" placeholder="¿Tienes alguna pregunta?">
+        </form>
+    </div>
+
+    <nav class="navbar">
+        <a href="micuenta.html">MI CUENTA</a>
+        <a href="midebito.html">MI DÉBITO</a>
+        <a href="servicios.html">PAGO DE SERVICIOS</a>
+    </nav>
+
+    <div class="return">
+        <a href="javascript:history.back()">
+            <img src="Images/return.png" alt="Botón de retroceso" width="100">
+        </a>
+    </div>
+
+    <div class="contenedor">
+        <div class="target2">
+            <h1>Haga su abono</h1>
+            <form ng-submit="deposit()">
+                <input type="number" ng-model="amount" placeholder="Cantidad" required>
+                <button type="submit" class="button">Pagar</button>
+            </form>            
+        </div>
+    </div>
+</body>
+</html>

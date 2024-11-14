@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.target1{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 27.5em;
+    height: 15em;
+    bottom: 6.75em;
+    left: 25%;
+    padding: 1.5em;
+    margin: 2.5em;
+    border-radius: 0.75em;
+    background-color: #d9d9d9;
+}
+
+.target1 form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.target1 .button {
+    width: 70%;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    background-color: #BF4AF7;
+    color: #f3f3f3;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .target1 h2{
+    color: #343434;
+    position: relative;
+    right: 6em;
+    text-align: left;
+    margin: 0.5em 0 0.5em 0;
+  }
+
+  .target1 h3{
+    color: #343434;
+    position: relative;
+    right: 5.5em;
+    text-align: left;
+    margin: 0.5em 0 0.5em 0;
+  }
+
+  .target2{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20em;
+    width: 27.5em;
+    top: 5em;
+    left: 25%;
+    padding: 1.5em;
+    margin: 2.5em;
+    background-color: #d9d9d9;
+    border-radius: 0.75em;
+}
+
+.target2 form{
+    width: 100%;
+}
+
+.target2 .button {
+    position: relative;
+    width: 80%;
+    text-align: center;
+    padding: 0.5em 0em;
+    top: 2.3em;
+    left: 2.5em;
+    background-color: #BF4AF7;
+    border: none;
+    border-radius: 0.5em;
+    
+  }
+
+  .target2 .option {
+    position: relative;
+    width: 80%;
+    text-align: center;
+    padding: 0.5em 0em;
+    top: 2.2em;
+    left: 2.5em;
+    margin-bottom: 0.4em;
+    background-color: #BF4AF7;
+    border: none;
+    border-radius: 0.5em;
+    
+  }
+  
+  .target2 button {
+    color: #f6f6f6;
+    text-decoration: none;
+  }
+
+  .target2 h1{
+    color: #343434;
+    font-size: 1.25em;
+    position: relative;
+    right: 0px;
+    margin: 0.5em 0 0.5em 0;
+  }
+
+  .target2 input {
+    left: 2.6em;
+    position: relative;
+    font-weight: 400;
+    width: 75%;
+    padding: 0.5em;
+    margin-bottom:  0.5em;
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+    top: 2.25em;
+  }
+
+  .button:hover {
+    background-color: #D486F9;
+    scale: 1.03;
+    transition: 0.3s;
+  }
+  

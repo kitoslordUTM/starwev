@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="starBankApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/account.css">
+    <link rel="stylesheet" type="text/css" href="styles/nav.css">
+
+    <script src="angular.min.js"></script> 
+    <!-- Agrega la librería AngularJS -->
+    <script src="angular-route.min.js"></script>
+    <script src="app.js" defer></script> <!-- Agrega el script JavaScript personalizado -->
+    <title>StarBank Web</title>
+</head>
+
+<body ng-controller="personalInfoController">
+    <div class="top">
+        <h1>STARBANK | INFORMACIÓN PERSONAL</h1>
+        
+    </div>
+
+    <nav class="navbar">
+        <a href="micuenta.html">MI CUENTA</a>
+        <a href="midebito.html">MI DÉBITO</a>
+        <a href="servicios.html">PAGO DE SERVICIOS</a>
+        <span></span>
+    </nav>
+
+    <div class="return">
+        <a href="javascript:history.back()">
+            <img src="Images/return.png" alt="Botón de retroceso" width="100">
+        </a>
+    </div>
+
+    <div class="banner">
+        <!-- El correo electrónico se mostrará aquí, utilizando AngularJS para vincular los datos -->
+        <img src="images/1.png" width="200">
+        <h1>{{ email }}</h1> <!-- AngularJS interpolación para mostrar el email -->
+    </div>
+
+    <section class="section80">
+        <div class="target">
+            <span></span>
+            <h2>¿Que desea hacer hoy?</h2>
+    
+            <div class="link">
+                <a href="hipoteca.html">Hipoteca</a>
+                <a href="automovil.html">Automóvil</a>
+                <a href="credito.html">Crédito</a>
+                <a href="estudiante.html">Estudiante</a>
+                <a href="cambiarnipopciones.html">Cambiar nip</a>
+            </div>
+<!-- Dentro de la sección de movimientos recientes en micuenta.html -->
+            <h3>Movimientos recientes</h3>
+            <!-- Botón que redirige a la página de movimientos -->
+            <button ng-click="redirectToMovementsPage()" class="link-button">Ver todos los movimientos</button>
+
+        </div>
+    </section>
+    
+</body>
+
+</html>
