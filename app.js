@@ -13,7 +13,7 @@ app.controller('loginController', function($scope, $http, $window) {
         };
 
         // Envía la solicitud POST a la API
-        $http.post('http://localhost:5120/api/Cliente/IniciarSesion', usuario)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/IniciarSesion', usuario)
             .then(function(response) {
                 console.log(response.data);
                 localStorage.setItem('usuarioCorreo', $scope.correo); // Guardar el correo en localStorage
@@ -67,7 +67,7 @@ app.controller('debitoController', ['$scope', '$http', '$window', function($scop
     };
 
     $scope.iniciarSesionDebito = function() {
-        $http.post('http://localhost:5120/api/Cliente/IniciarSesionDebito', $scope.datosDebito)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/IniciarSesionDebito', $scope.datosDebito)
             .then(function(response) {
                 alert('Sesión iniciada con éxito.');
                 localStorage.setItem('numeroTarjeta', $scope.datosDebito.numeroTarjeta);
@@ -94,13 +94,13 @@ angular.module('starBankApp')
         let url = '';
         let postData = {};
         if ($scope.transaccionDatos.tipo === 'depositar') {
-            url = 'http://localhost:5120/api/Cliente/Depositar';
+            url = 'https://webapplication220241116151704.azurewebsites.net/api/Cliente/Depositar';
             postData = {
                 NumeroTarjeta: $scope.transaccionDatos.numeroTarjeta,
                 Cantidad: $scope.transaccionDatos.cantidad
             };
         } else if ($scope.transaccionDatos.tipo === 'transferir') {
-            url = 'http://localhost:5120/api/Cliente/transferir';
+            url = 'https://webapplication220241116151704.azurewebsites.net/api/Cliente/transferir';
             postData = {
                 TarjetaOrigen: localStorage.getItem('numeroTarjeta'),
                 TarjetaDestino: $scope.transaccionDatos.numeroTarjeta,
@@ -141,7 +141,7 @@ angular.module('starBankApp')
             fecha: new Date().toISOString(),
             numeroCuenta: numeroCuenta
         };
-        $http.post('http://localhost:5120/api/Cliente/Transacciones', transaccion)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/Transacciones', transaccion)
             .then(function(response) {
                 console.log('Transacción registrada con éxito');
             }).catch(function(error) {
@@ -160,7 +160,7 @@ angular.module('starBankApp')
     
         console.log("Enviando correo con la siguiente información:", correoInfo);
     
-        $http.post('http://localhost:5120/api/Notification/Notis', correoInfo)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Notification/Notis', correoInfo)
             .then(function(response) {
                 console.log('Correo enviado con éxito', response);
             }).catch(function(error) {
@@ -192,7 +192,7 @@ angular.module('starBankApp')
             return;
         }
         
-        $http.post('http://localhost:5120/api/Cliente/Retirar', $scope.retiroDatos)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/Retirar', $scope.retiroDatos)
             .then(function(response) {
                 var fechaRetiro = new Date().toLocaleString();
                 alert("Retiro exitoso:\n\nMonto: " + $scope.retiroDatos.cantidad + "\nNúmero de cuenta: " + $scope.retiroDatos.numeroTarjeta + "\nFecha: " + fechaRetiro);
@@ -213,7 +213,7 @@ angular.module('starBankApp')
             fecha: new Date().toISOString(),
             numeroCuenta: numeroCuenta
         };
-        $http.post('http://localhost:5120/api/Cliente/Transacciones', transaccion)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/Transacciones', transaccion)
             .then(function(response) {
                 console.log('Transacción registrada con éxito');
             }).catch(function(error) {
@@ -231,7 +231,7 @@ angular.module('starBankApp')
             NumeroCuenta: numeroCuenta
         };
 
-        $http.post('http://localhost:5120/api/Notification/Notis', correoDto)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Notification/Notis', correoDto)
             .then(function(response) {
                 console.log('Correo enviado con éxito');
             }).catch(function(error) {
@@ -260,7 +260,7 @@ angular.module('starBankApp').controller('hipotecaController', ['$scope', '$http
     };
 
     $scope.obtenerDatosHipoteca = function() {
-        $http.get('http://localhost:5120/api/Cliente/ObtenerDeudaHipoteca?NumeroCuenta=' + $scope.datosHipoteca.numeroCuenta)
+        $http.get('https://webapplication220241116151704.azurewebsites.net/api/Cliente/ObtenerDeudaHipoteca?NumeroCuenta=' + $scope.datosHipoteca.numeroCuenta)
         .then(function(response) {
             sessionStorage.setItem('datosHipoteca', JSON.stringify(response.data));
             sessionStorage.setItem('numeroCuentaHipoteca', $scope.datosHipoteca.numeroCuenta);
@@ -296,8 +296,8 @@ angular.module('starBankApp').controller('pagoHipotecaController', ['$scope', '$
 
     $scope.realizarPago = function(tipo) {
         let url = tipo === 'capital' ?
-            'http://localhost:5120/api/Cliente/DepositarParaDeudaHipoteca' :
-            'http://localhost:5120/api/Cliente/DepositarMensualidadDeudaHipoteca';
+            'https://webapplication220241116151704.azurewebsites.net/api/Cliente/DepositarParaDeudaHipoteca' :
+            'https://webapplication220241116151704.azurewebsites.net/api/Cliente/DepositarMensualidadDeudaHipoteca';
 
         let montoPago = tipo === 'mensualidad' ? $scope.datosHipoteca.mensualidad : $scope.datosPago.cantidad;
         let pago = {
@@ -326,7 +326,7 @@ angular.module('starBankApp').controller('pagoHipotecaController', ['$scope', '$
             fecha: new Date().toISOString(),
             numeroCuenta: numeroCuenta
         };
-        $http.post('http://localhost:5120/api/Cliente/Transacciones', transaccion)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/Transacciones', transaccion)
             .then(function(response) {
                 console.log('Transacción registrada con éxito');
             }).catch(function(error) {
@@ -343,7 +343,7 @@ angular.module('starBankApp').controller('pagoHipotecaController', ['$scope', '$
             numeroCuenta: $scope.numeroCuentaHipoteca // El número de cuenta de hipoteca
         };
     
-        $http.post('http://localhost:5120/api/Notification/Notis', correoInfo)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Notification/Notis', correoInfo)
             .then(function(response) {
                 console.log('Correo enviado con éxito');
             }).catch(function(error) {
@@ -364,7 +364,7 @@ angular.module('starBankApp').controller('obtenerDatosAutoController', ['$scope'
 
     $scope.obtenerDatosDeudaAuto = function() {
         if ($scope.datosAuto.numeroCuenta) {
-            $http.get('http://localhost:5120/api/Cliente/ObtenerMensualidadDeudaAutomovil?NumeroCuenta=' + $scope.datosAuto.numeroCuenta)
+            $http.get('https://webapplication220241116151704.azurewebsites.net/api/Cliente/ObtenerMensualidadDeudaAutomovil?NumeroCuenta=' + $scope.datosAuto.numeroCuenta)
             .then(function(response) {
                 sessionStorage.setItem('datosDeudaAuto', JSON.stringify(response.data));
                 sessionStorage.setItem('numeroCuentaAuto', $scope.datosAuto.numeroCuenta);
@@ -392,8 +392,8 @@ angular.module('starBankApp').controller('pagoDeudaAutoController', ['$scope', '
 
     $scope.realizarPago = function(tipo) {
         let url = tipo === 'capital' ?
-            'http://localhost:5120/api/Cliente/DepositarParaDeudaAutomovil' :
-            'http://localhost:5120/api/Cliente/DepositarMensualidadDeudaAutomovil';
+            'https://webapplication220241116151704.azurewebsites.net/api/Cliente/DepositarParaDeudaAutomovil' :
+            'https://webapplication220241116151704.azurewebsites.net/api/Cliente/DepositarMensualidadDeudaAutomovil';
         
         let pago = {
             NumeroCuentaM: $scope.numeroCuentaAuto,
@@ -421,7 +421,7 @@ angular.module('starBankApp').controller('pagoDeudaAutoController', ['$scope', '
             fecha: new Date().toISOString(),
             numeroCuenta: numeroCuenta
         };
-        $http.post('http://localhost:5120/api/Cliente/Transacciones', transaccion)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/Transacciones', transaccion)
             .then(function(response) {
                 console.log('Transacción registrada con éxito');
             }).catch(function(error) {
@@ -438,7 +438,7 @@ angular.module('starBankApp').controller('pagoDeudaAutoController', ['$scope', '
             numeroCuenta: $scope.numeroCuentaAuto
         };
     
-        $http.post('http://localhost:5120/api/Notification/Notis', correoInfo)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Notification/Notis', correoInfo)
             .then(function(response) {
                 console.log('Correo enviado con éxito');
             }).catch(function(error) {
@@ -457,7 +457,7 @@ angular.module('starBankApp').controller('estudianteController', ['$scope', '$ht
     };
 
     $scope.obtenerDatosEstudiante = function() {
-        $http.get('http://localhost:5120/api/Cliente/DatosCE?numeroCuenta=' + $scope.datosEstudiante.numeroCuenta)
+        $http.get('https://webapplication220241116151704.azurewebsites.net/api/Cliente/DatosCE?numeroCuenta=' + $scope.datosEstudiante.numeroCuenta)
         .then(function(response) {
             sessionStorage.setItem('datosEstudiante', JSON.stringify(response.data));
             sessionStorage.setItem('numeroCuentaEstudiante', $scope.datosEstudiante.numeroCuenta);
@@ -489,8 +489,8 @@ angular.module('starBankApp').controller('pagoEstudianteController', ['$scope', 
 
     $scope.realizarPago = function(tipo) {
         let url = tipo === 'capital' ?
-            'http://localhost:5120/api/Cliente/DepositarParaDeudaHipoteca' : // Asegúrate de que este es el endpoint correcto para capital
-            'http://localhost:5120/api/Cliente/DepositarMensualidadDeudaCreditoEducativo';
+            'https://webapplication220241116151704.azurewebsites.net/api/Cliente/DepositarParaDeudaHipoteca' : // Asegúrate de que este es el endpoint correcto para capital
+            'https://webapplication220241116151704.azurewebsites.net/api/Cliente/DepositarMensualidadDeudaCreditoEducativo';
         
         let montoPago = tipo === 'mensualidad' ? $scope.datosEstudiante.mensualidad : $scope.datosPago.cantidad;
         let pago = {
@@ -519,7 +519,7 @@ angular.module('starBankApp').controller('pagoEstudianteController', ['$scope', 
             fecha: new Date().toISOString(),
             numeroCuenta: numeroCuenta
         };
-        $http.post('http://localhost:5120/api/Cliente/Transacciones', transaccion)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/Transacciones', transaccion)
             .then(function(response) {
                 console.log('Transacción registrada con éxito');
             }).catch(function(error) {
@@ -535,7 +535,7 @@ angular.module('starBankApp').controller('pagoEstudianteController', ['$scope', 
             monto: monto,
             numeroCuenta: $scope.numeroCuentaEstudiante
         };
-        $http.post('http://localhost:5120/api/Notification/Notis', correoInfo)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Notification/Notis', correoInfo)
             .then(function(response) {
                 console.log('Correo enviado con éxito');
             }).catch(function(error) {
@@ -556,7 +556,7 @@ angular.module('starBankApp').controller('pagoEstudianteController', ['$scope', 
     };
 
     $scope.submitCardData = function() {
-        $http.post('http://localhost:5120/api/Cliente/IniciarSesionCredito', $scope.cardData)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/IniciarSesionCredito', $scope.cardData)
             .then(function(response) {
                 alert('Sesión iniciada con éxito.');
                 // Almacenar el número de tarjeta y la deuda en localStorage
@@ -592,7 +592,7 @@ app.controller('DepositController', ['$scope', '$http', '$window', function($sco
             CantidadCredito: parseFloat($scope.amount)  // Asegúrate de que estás enviando un número
         };
 
-        $http.post('http://localhost:5120/api/Cliente/DepositarParaDeuda', depositData)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/DepositarParaDeuda', depositData)
             .then(function(response) {
                 // Alerta con los detalles del depósito
                 alert('Depósito realizado exitosamente.\nDeuda Actual: ' + response.data.deudaActual + '\nNúmero de cuenta: ' + depositData.TarjetaCredito + '\nFecha: ' + new Date().toLocaleString());
@@ -615,7 +615,7 @@ app.controller('DepositController', ['$scope', '$http', '$window', function($sco
             fecha: new Date().toISOString(),
             numeroCuenta: numeroCuenta
         };
-        $http.post('http://localhost:5120/api/Cliente/Transacciones', transaccion)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/Transacciones', transaccion)
             .then(function(response) {
                 console.log('Transacción registrada con éxito');
             }).catch(function(error) {
@@ -631,7 +631,7 @@ app.controller('DepositController', ['$scope', '$http', '$window', function($sco
             monto: monto,
             numeroCuenta: localStorage.getItem('numeroTarjeta')
         };
-        $http.post('http://localhost:5120/api/Notification/Notis', correoInfo)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Notification/Notis', correoInfo)
             .then(function(response) {
                 console.log('Correo enviado con éxito');
             }).catch(function(error) {
@@ -656,7 +656,7 @@ app.controller('TotalPaymentController', ['$scope', '$http', '$window', function
             MontoPago: parseFloat($scope.amount)  // Asegúrate de convertir a float
         };
 
-        $http.post('http://localhost:5120/api/Cliente/PagarDeuda', depositData)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/PagarDeuda', depositData)
             .then(function(response) {
                 // Obtener la fecha y hora actual
                 var currentDate = new Date();
@@ -687,7 +687,7 @@ app.controller('TotalPaymentController', ['$scope', '$http', '$window', function
             fecha: new Date().toISOString(),
             numeroCuenta: numeroCuenta
         };
-        $http.post('http://localhost:5120/api/Cliente/Transacciones', transaccion)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/Transacciones', transaccion)
             .then(function(response) {
                 console.log('Transacción registrada con éxito');
             }).catch(function(error) {
@@ -703,7 +703,7 @@ app.controller('TotalPaymentController', ['$scope', '$http', '$window', function
             monto: monto,
             numeroCuenta: localStorage.getItem('numeroTarjeta')
         };
-        $http.post('http://localhost:5120/api/Notification/Notis', correoInfo)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Notification/Notis', correoInfo)
             .then(function(response) {
                 console.log('Correo enviado con éxito');
             }).catch(function(error) {
@@ -722,7 +722,7 @@ app.controller('seriviciosController', ['$scope', '$http', '$window', function($
     };
 
     $scope.obtenerDatosServicios = function() {
-        $http.post('http://localhost:5120/api/Cliente/Login', $scope.datosServicios)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/Login', $scope.datosServicios)
             .then(function(response) {
                 alert('Sesión iniciada con éxito.');
                 // Guardar el número de cuenta y la mensualidad obtenida
@@ -763,8 +763,8 @@ angular.module('starBankApp').controller('pagoServicioController', ['$scope', '$
 
     $scope.realizarPago = function(tipo) {
         let url = tipo === 'mensualidad' ?
-            'http://localhost:5120/api/Cliente/PagarMensualidad' :
-            'http://localhost:5120/api/Cliente/DepositarParaDeudaHipoteca';
+            'https://webapplication220241116151704.azurewebsites.net/api/Cliente/PagarMensualidad' :
+            'https://webapplication220241116151704.azurewebsites.net/api/Cliente/DepositarParaDeudaHipoteca';
 
         let pago = {
             NumeroCuenta: $scope.numeroCuenta,
@@ -789,7 +789,7 @@ angular.module('starBankApp').controller('pagoServicioController', ['$scope', '$
             fecha: new Date().toISOString(),
             numeroCuenta: numeroCuenta
         };
-        $http.post('http://localhost:5120/api/Cliente/Transacciones', transaccion)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/Transacciones', transaccion)
             .then(function(response) {
                 console.log('Transacción registrada con éxito');
             }).catch(function(error) {
@@ -805,7 +805,7 @@ angular.module('starBankApp').controller('pagoServicioController', ['$scope', '$
             monto: monto,
             numeroCuenta: $scope.numeroCuenta
         };
-        $http.post('http://localhost:5120/api/Notification/Notis', correoInfo)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Notification/Notis', correoInfo)
             .then(function(response) {
                 console.log('Correo enviado con éxito');
             }).catch(function(error) {
@@ -874,7 +874,7 @@ angular.module('starBankApp').controller('cambiarNIPController', ['$scope', '$ht
     };
 
     $scope.cambiarNIP = function() {
-        $http.post('http://localhost:5120/api/Cliente/EditarNIP', $scope.datosNIP)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/EditarNIP', $scope.datosNIP)
             .then(function(response) {
                 alert(`NIP cambiado exitosamente. Se ha enviado un ticket a su correo con los detalles de la operación.\nNúmero de Tarjeta: ${$scope.datosNIP.numeroTarjeta}`);
                 $scope.datosNIP = {
@@ -898,7 +898,7 @@ angular.module('starBankApp').controller('cambiarNIPController', ['$scope', '$ht
             fecha: new Date().toISOString(),
             numeroCuenta: numeroCuenta
         };
-        $http.post('http://localhost:5120/api/Cliente/Transacciones', transaccion)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/Transacciones', transaccion)
             .then(function(response) {
                 console.log('Transacción registrada con éxito');
             }).catch(function(error) {
@@ -914,7 +914,7 @@ angular.module('starBankApp').controller('cambiarNIPController', ['$scope', '$ht
             monto: monto, // Asegúrate de que el monto es 0 como solicitado
             numeroCuenta: $scope.datosNIP.numeroTarjeta
         };
-        $http.post('http://localhost:5120/api/Notification/Notis', correoInfo)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Notification/Notis', correoInfo)
             .then(function(response) {
                 console.log('Correo enviado con éxito');
             }).catch(function(error) {
@@ -933,7 +933,7 @@ angular.module('starBankApp').controller('cambiarNIPControllerC', ['$scope', '$h
     };
 
     $scope.cambiarNIP = function() {
-        $http.post('http://localhost:5120/api/Cliente/EditarNIPCredito', $scope.datosNIP)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/EditarNIPCredito', $scope.datosNIP)
             .then(function(response) {
                 alert(`NIP cambiado exitosamente. Se ha enviado un ticket a su correo con los detalles de la operación.\nNúmero de Tarjeta: ${$scope.datosNIP.numeroTarjeta}`);
                 $scope.datosNIP = {  // Limpia los campos después del cambio exitoso
@@ -957,7 +957,7 @@ angular.module('starBankApp').controller('cambiarNIPControllerC', ['$scope', '$h
             fecha: new Date().toISOString(),
             numeroCuenta: numeroCuenta
         };
-        $http.post('http://localhost:5120/api/Cliente/Transacciones', transaccion)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Cliente/Transacciones', transaccion)
             .then(function(response) {
                 console.log('Transacción registrada con éxito');
             }).catch(function(error) {
@@ -973,7 +973,7 @@ angular.module('starBankApp').controller('cambiarNIPControllerC', ['$scope', '$h
             monto: monto,
             numeroCuenta: $scope.datosNIP.numeroTarjeta
         };
-        $http.post('http://localhost:5120/api/Notification/Notis', correoInfo)
+        $http.post('https://webapplication220241116151704.azurewebsites.net/api/Notification/Notis', correoInfo)
             .then(function(response) {
                 console.log('Correo enviado con éxito');
             }).catch(function(error) {
@@ -995,7 +995,7 @@ app.controller('MovementsController', function($scope, $http, $window) {
         var correoID = localStorage.getItem('correoID');
 
         // Realiza una solicitud GET a la API para obtener los movimientos
-        $http.get('http://localhost:5120/api/Cliente/PorCorreo/' + correoID)
+        $http.get('https://webapplication220241116151704.azurewebsites.net/api/Cliente/PorCorreo/' + correoID)
             .then(function(response) {
                 // Asigna los movimientos obtenidos a la variable movements
                 $scope.movements = response.data;
@@ -1021,5 +1021,8 @@ app.controller('MovementsController', function($scope, $http, $window) {
     // Cargar los movimientos al cargar la página
     $scope.loadMovements();
 });
+
+
+
 
 
